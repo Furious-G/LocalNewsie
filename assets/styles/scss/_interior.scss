@@ -1,0 +1,598 @@
+/*  
+######################   
+    interior 
+###################### 
+*/
+
+.container:not(.home) {
+    padding-top: 40px;
+
+    @media only screen and (max-width: 700px) {
+        padding-top: 20px;
+    }
+
+}
+
+.whiteBG2,
+.whiteBG {
+    background: #fff;
+    border-radius: 6px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    margin-bottom: 120px;
+    margin-top: 60px;
+    z-index: 20;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+
+    @media only screen and (max-width: 700px) {
+        padding: 15px !important;
+        border-radius: unset;
+        margin-top: 0;
+    }
+
+    h4 {
+        padding-bottom: 20px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: normal;
+
+        @media only screen and (max-width: 700px) {
+            font-size: 25px;
+        }
+    }
+
+    h2 {
+        font-size: 38px;
+        margin-bottom: 0;
+        line-height: normal;
+        color: $txt;
+    }
+
+    h1 {
+        @include lobster;
+        color: $xorange;
+        font-size: 28px;
+        margin-bottom: -25px;
+        @media only screen and (max-width: 700px) {
+            margin-bottom: -15px;
+        }
+    }
+
+    &.bigPad {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+
+    .backBtn {
+        position: absolute;
+        left: 30px;
+    }
+}
+
+
+/*  
+######################   
+    partner form 
+###################### 
+*/
+
+.partnerForm {
+
+    z-index: 99;
+
+    .form {
+        padding-top: 40px;
+    }
+
+    .formFlex {
+        display: flex;
+
+        @media only screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    label {
+        padding-bottom: 30px;
+
+        @media only screen and (max-width: 700px) {
+            padding: 10px 0px;
+        }
+    }
+
+    div.formFlex>label:nth-of-type(even) {
+        padding-left: 30px
+    }
+
+    br {
+        display: none;
+    }
+
+    [type="email"],
+    [type="text"],
+    [type="tel"] {
+
+        border: none;
+        border-bottom: solid 1px #999;
+        box-shadow: none;
+    }
+
+    ::placeholder {
+        color: #a0a0a0;
+    }
+
+    .subBtn {
+        width: auto !important;
+        float: right;
+        margin-right: 30px;
+        padding: 15px 15px;
+        border-radius: 6px;
+    }
+
+    .wpcf7-response-output {
+        font-size: 20px;
+    }
+
+}
+
+
+
+.launchPage {
+
+    a {
+        color: #666;
+
+        &:hover {
+            color: $xorange;
+        }
+    }
+
+    a.orange{
+        color:$xorange;
+        &:hover{
+            color:#000;
+        }
+    }
+
+    .boxes>.cell {
+        border: solid 2px #eee;
+        border-radius: 8px;
+
+        span {
+            display: block;
+        }
+
+        &:hover {
+            border-color: $xorange;
+            scale: 1.06;
+            -webkit-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.32);
+            -moz-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.32);
+            box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.32);
+        }
+    }
+
+    img {
+        // -webkit-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
+        // -moz-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
+        // box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
+        transition: all .25s ease-out;
+        width: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        // &:hover{
+        //    filter: grayscale(100%);
+        //       -webkit-filter: grayscale(100%);
+        //          -moz-filter: grayscale(100%);
+        // }
+    }
+}
+
+
+.team {
+
+    .teamMember {
+        margin-bottom: 40px;
+
+        img {
+            border-radius: 50%;
+        }
+
+        >div {
+            margin-bottom: 20px;
+            ;
+        }
+    }
+
+}
+
+
+img.techfab {
+    width: 80%
+}
+
+
+.aboutPage {
+    img {
+        border-radius: 10px;
+    }
+
+    .about>div {
+        padding-bottom: 50px
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .text-left,
+        .text-right {
+            text-align: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+/*  
+######################   
+    Demo
+###################### 
+*/
+
+.demoPage {
+    &.whiteBG2 {
+        padding: 30px 0 !important;
+        background-image: url("../../images/demo/demobg1.png");
+        background-size: 250px;
+        background-repeat: no-repeat;
+        background-position: -2px -3px;
+    }
+
+    .top-title h1 {
+        color: #fff;
+        background-image: url("../../images/demo/demoFrame.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 70px;
+        padding: 15px;
+
+        @media only screen and (max-width: 768px) {
+            background-image: none;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    h5 {
+        font-size: 26px;
+        ;
+    }
+
+    .demoPhone {
+        height: 500px;
+    }
+
+    .democontainer {
+
+        .mright {
+            position: relative;
+        }
+
+        .mleft {
+            position: relative;
+        }
+
+        &.first {
+            margin-bottom: 60px;
+        }
+
+        &.bg2 {
+            background-image: url("../../images/demo/demobg2.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            background-position: right;
+            padding: 40px 0;
+        }
+
+        &.bg3 {
+            background-image: url("../../images/demo/demobg3.png");
+            background-size: 460px;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+        }
+
+        &.bg4 {
+            background-image: url("../../images/demo/demobg4.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            background-position: right;
+            padding: 40px 0;
+        }
+
+        &.bg5 {
+            background-image: url("../../images/demo/demobg5.png");
+            background-size: 360px;
+            background-repeat: no-repeat;
+            padding: 40px 0;
+        }
+
+        &.bg6 {
+            background-image: url("../../images/demo/demobg6.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            background-position: right;
+            padding: 40px 0;
+        }
+
+        &.bg7 {
+            background-image: url("../../images/demo/demobg8.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            padding: 40px 0;
+        }
+
+        &.bg8 {
+            background-image: url("../../images/demo/demobg7.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            padding: 40px 0;
+            background-position: right;
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            padding: 0 !important;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .grid-x {
+            background-image: none !important;
+        }
+
+    }
+
+    h4 {
+        margin-bottom: 40px;
+    }
+
+
+    .localScroll {
+        height: 383px;
+        width: 217px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 84px;
+        left: 36px;
+    }
+
+    .channelScroll {
+        height: 387px;
+        width: 217px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 84px;
+        left: 92px;
+        z-index: 99;
+    }
+
+    .eventsScroll {
+        height: 383px;
+        width: 217px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 80px;
+        left: 36px;
+        z-index: 99;
+    }
+
+    .listingScroll {
+        height: 387px;
+        width: 217px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 80px;
+        left: 36px;
+        z-index: 99;
+    }
+
+    .storyScroll {
+        height: 384px;
+        width: 217px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 83px;
+        left: 92px;
+        z-index: 99;
+    }
+
+}
+
+/*  
+######################   
+    Team
+###################### 
+*/
+.teamPage {
+    .members {
+        span {
+            font-size: 9px;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 16px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 20px;
+                padding-top: 10px;
+            }
+        }
+
+        a {
+            color: $txt;
+
+            @media only screen and (max-width: 768px) {
+                >div {
+                    margin-bottom: 30px;
+                }
+            }
+
+            img {
+                transition: all .25s ease-out;
+            }
+
+            img:hover {
+                scale: 1.06;
+                -webkit-box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.25);
+
+                @media only screen and (max-width: 760px) {
+                    scale: 1;
+                    box-shadow: unset;
+                }
+            }
+        }
+
+        .imember {
+            h3 {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .modal {
+        h3 {
+            font-weight: 700;
+        }
+    }
+}
+
+/*  
+######################   
+    Newsie Program
+###################### 
+*/
+
+.programPage {
+    h2 {
+        font-weight: normal;
+        font-size: 3.1em;
+        margin-bottom: -20px;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 2.3em;
+            margin-top: 10px
+        }
+
+
+        &.sub {
+            font-weight: normal;
+            font-size: 4.7em;
+            font-weight: 900;
+            margin: auto;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 2.4em;
+            }
+        }
+    }
+
+}
+
+/*  
+######################   
+    FAQ 
+###################### 
+*/
+
+
+
+.faqPage {
+
+    &.whiteBG2 {
+        background-image: url("../../images/faqbg.png") !important;
+        background-size: contain;
+        background-repeat: no-repeat
+    }
+
+    .accord {
+        font-size: 18px;
+
+        .accordion {
+            margin-top: 20px;
+        }
+
+        .accordion-item {
+            margin-bottom: 30px;
+            -webkit-box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.27);
+            box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.27);
+        }
+
+        .accordion-title {
+            border: none;
+            background: #F6F7FF;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 20px;
+            color: #131523;
+        }
+
+        .accordion-title:before {
+            content: "";
+        }
+
+        .accordion-title:hover:after {
+            content: "+";
+            margin-left: 10px;
+        }
+
+        .is-active .accordion-title:after {
+            content: "";
+        }
+
+        .accordion-title:hover,
+        .accordion-title:focus {
+            color: #333;
+        }
+
+        .accordion-content {
+            border: none;
+            border: none !important;
+            font-size: 16px;
+            color: #666;
+        }
+
+        :last-child:not(.is-active)>.accordion-title {
+            border-bottom: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .accordion li {
+                background: #f4f4f4;
+                margin-bottom: 10px
+            }
+
+            .accordion li .accordion-title {
+                padding: 20px 10px;
+            }
+
+        }
+    }
+
+}

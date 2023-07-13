@@ -1,0 +1,70 @@
+/*  
+######################   
+	Footer 
+###################### 
+*/
+
+
+footer{
+  background:$xorange;
+  color:#fff;
+  padding:60px 0;
+  img{
+  	width:130px;
+  }
+	.social{
+		a{
+			background:rgba(255,255,255, .3);
+			width:40px;
+			height:40px;
+			font-size:22px;
+			display: inline-block;
+			border-radius:50%;
+			line-height: 44px;
+			text-align: center;
+			color:#fff;
+			margin-right:10px;
+				&:hover{
+					background:#fff;
+					color:$xorange;
+				}
+			}
+			@media only screen and (max-width: 768px) {
+				text-align: center;
+				margin-top:30px;
+			}
+	}
+
+	.menu{
+		justify-content:space-evenly;
+
+		/* ipad portrait */
+		@media (min-width: 768px) and (max-width: 1023px) { 
+		margin-top:20px;
+		}
+		    
+		@media only screen and (max-width: 700px) {
+			display: block;
+			margin-top:20px;
+		}
+	}
+
+	.footerNav a{
+			color:#fff;
+	}
+
+	.menu .active > a{
+	  background: none;
+	}
+	@media only screen and (max-width: 700px) {
+		.footerLogo{
+			text-align: center;
+		}
+	}
+}
+
+.subFooter{
+  padding: 20px;
+  color: #a6a6a6;
+  font-size: 12px;
+}

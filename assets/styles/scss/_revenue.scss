@@ -1,0 +1,125 @@
+/*  
+######################   
+    revenue 
+###################### 
+*/
+
+.revenue {
+
+    .noUi-horizontal {
+        height: 30px;
+
+        .noUi-handle {
+            height: 38px;
+        }
+    }
+
+
+    .tValue {
+        font-size: 28px;
+        display: block;
+        font-weight: 600;
+    }
+
+
+    .noUi-connect {
+        background: #F0552A;
+    }
+
+    .noUi-tooltip {
+        border: 1px solid #BEBCBC;
+        font-size: 20px;
+    }
+
+    .noUi-target {
+        background: #E9E9E9;
+    }
+
+
+    .tValue:before {
+        content: "$";
+    }
+
+
+
+    .noUi-handle::after,
+    .noUi-handle::before {
+        background: #fff;
+    }
+
+    .range {
+
+        padding: 20px 0 40px 40px;
+    }
+
+    .lbl {
+        padding-bottom: 60px;
+        display: block;
+        font-weight: bold;
+    }
+
+    .revTotals {
+        background: $xorange;
+        border-radius: 8px;
+        padding: 10px;
+        color: #fff;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    img.tyc {
+        height: 200px;
+        position: absolute;
+        top: -60px;
+        left: -60px;
+        @media only screen and (max-width: 768px) {
+            position:initial;
+            display: block;
+            margin:0 auto;
+        }
+    }
+
+    .rBox {
+        margin-top: 40px
+    }
+
+    .porel{
+        position:relative;
+        margin-top:60px;
+        @media only screen and (max-width: 768px) {
+            margin-top:0;
+        }
+    }
+
+    .vertSep span {
+
+        width: 1px;
+        height: 70px;
+        display: block;
+        margin:0 30px;
+        border-left: dotted 2px #fff;
+
+        @media only screen and (max-width: 768px) {
+            height: 1px;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-bottom: dotted 2px #fff;
+        }
+    }
+
+    .btnsm {
+        float: right;
+        margin-top: 60px;
+    }
+
+    .expl {
+        padding: 15px 0;
+        display: block;
+    }
+}
+
