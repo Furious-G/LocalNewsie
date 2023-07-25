@@ -340,7 +340,7 @@ body.whitepage .top-bar .tert ul li.partner:hover a, body.whitepage .top-bar .te
 }
 @media only screen and (max-width: 700px) {
   .whiteBG2,
-.whiteBG {
+  .whiteBG {
     padding: 15px !important;
     border-radius: unset;
     margin-top: 0;
@@ -355,7 +355,7 @@ body.whitepage .top-bar .tert ul li.partner:hover a, body.whitepage .top-bar .te
 }
 @media only screen and (max-width: 700px) {
   .whiteBG2 h4,
-.whiteBG h4 {
+  .whiteBG h4 {
     font-size: 25px;
   }
 }
@@ -376,7 +376,7 @@ body.whitepage .top-bar .tert ul li.partner:hover a, body.whitepage .top-bar .te
 }
 @media only screen and (max-width: 700px) {
   .whiteBG2 h1,
-.whiteBG h1 {
+  .whiteBG h1 {
     margin-bottom: -15px;
   }
 }
@@ -515,11 +515,11 @@ img.techfab {
 }
 @media only screen and (max-width: 768px) {
   .aboutPage .text-left,
-.aboutPage .text-right {
+  .aboutPage .text-right {
     text-align: center;
   }
   .aboutPage .text-left img,
-.aboutPage .text-right img {
+  .aboutPage .text-right img {
     width: 100%;
   }
 }
@@ -683,7 +683,9 @@ img.techfab {
 ###################### 
 */
 .teamPage .members span {
-  font-size: 9px;
+  font-size: 11px;
+  display: block;
+  margin-top: 6px;
 }
 @media only screen and (max-width: 768px) {
   .teamPage .members span {
