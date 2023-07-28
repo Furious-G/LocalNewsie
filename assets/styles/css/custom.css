@@ -216,6 +216,7 @@ header.header {
 }
 .top-bar .mainLogo {
   height: 65px;
+  width: 279px;
 }
 .top-bar .menu i {
   font-size: 28px;
@@ -1076,6 +1077,7 @@ img.techfab {
   display: block !important;
   margin: 0 auto;
   opacity: 0.5;
+  width: auto;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
