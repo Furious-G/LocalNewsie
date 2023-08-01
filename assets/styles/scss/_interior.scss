@@ -4,6 +4,10 @@
 ###################### 
 */
 
+.container{
+    margin:auto;
+}
+
 .container:not(.home) {
     padding-top: 40px;
 
@@ -419,6 +423,23 @@ img.techfab {
     }
 
 }
+
+
+
+
+
+
+@supports not ((-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto)) {
+    .demoPage .channelScroll {
+
+  left: 192px;
+  z-index: 99;
+}
+}
+
+
+
+
 
 /*  
 ######################   

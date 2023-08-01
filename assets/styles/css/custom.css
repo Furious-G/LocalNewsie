@@ -317,6 +317,10 @@ body.whitepage .top-bar .tert ul li.partner:hover a, body.whitepage .top-bar .te
     interior 
 ###################### 
 */
+.container {
+  margin: auto;
+}
+
 .container:not(.home) {
   padding-top: 40px;
 }
@@ -678,6 +682,12 @@ img.techfab {
   z-index: 99;
 }
 
+@supports not ((-webkit-hyphens: auto) or (hyphens: auto)) {
+  .demoPage .channelScroll {
+    left: 192px;
+    z-index: 99;
+  }
+}
 /*  
 ######################   
     Team
@@ -830,7 +840,6 @@ img.techfab {
 ###################### 
 */
 .hero {
-  width: 90%;
   margin: 0 auto;
   margin-bottom: -60px;
   margin-top: -60px;
@@ -841,6 +850,10 @@ img.techfab {
     margin-bottom: 0;
     margin-top: 0;
   }
+}
+
+.home .hero {
+  width: 90%;
 }
 
 .theta-carousel-outer-container .tc-button {
