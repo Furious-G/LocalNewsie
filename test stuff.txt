@@ -1,1 +1,1 @@
-restore
+test the pull command
