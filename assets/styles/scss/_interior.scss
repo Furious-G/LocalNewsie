@@ -4,8 +4,8 @@
 ###################### 
 */
 
-.container{
-    margin:auto;
+.container {
+    margin: auto;
 }
 
 .container:not(.home) {
@@ -14,7 +14,6 @@
     @media only screen and (max-width: 700px) {
         padding-top: 20px;
     }
-
 }
 
 .whiteBG2,
@@ -53,6 +52,16 @@
         margin-bottom: 0;
         line-height: normal;
         color: $txt;
+
+        @media only screen and (max-width: 700px) {
+
+            .whiteBG2 h2,
+            .whiteBG h2 {
+                font-size: 30px;
+                line-height: 35px;
+                margin-block: 15px;
+            }
+        }
     }
 
     h1 {
@@ -60,6 +69,7 @@
         color: $xorange;
         font-size: 28px;
         margin-bottom: -25px;
+
         @media only screen and (max-width: 700px) {
             margin-bottom: -15px;
         }
@@ -76,7 +86,6 @@
     }
 }
 
-
 /*  
 ######################   
     partner form 
@@ -84,7 +93,6 @@
 */
 
 .partnerForm {
-
     z-index: 99;
 
     .form {
@@ -108,7 +116,7 @@
     }
 
     div.formFlex>label:nth-of-type(even) {
-        padding-left: 30px
+        padding-left: 30px;
     }
 
     br {
@@ -118,7 +126,6 @@
     [type="email"],
     [type="text"],
     [type="tel"] {
-
         border: none;
         border-bottom: solid 1px #999;
         box-shadow: none;
@@ -139,13 +146,9 @@
     .wpcf7-response-output {
         font-size: 20px;
     }
-
 }
 
-
-
 .launchPage {
-
     a {
         color: #666;
 
@@ -154,10 +157,11 @@
         }
     }
 
-    a.orange{
-        color:$xorange;
-        &:hover{
-            color:#000;
+    a.orange {
+        color: $xorange;
+
+        &:hover {
+            color: #000;
         }
     }
 
@@ -182,7 +186,7 @@
         // -webkit-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
         // -moz-box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
         // box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.12);
-        transition: all .25s ease-out;
+        transition: all 0.25s ease-out;
         width: 150px;
         border-radius: 50%;
         margin-bottom: 10px;
@@ -194,9 +198,7 @@
     }
 }
 
-
 .team {
-
     .teamMember {
         margin-bottom: 40px;
 
@@ -206,17 +208,13 @@
 
         >div {
             margin-bottom: 20px;
-            ;
         }
     }
-
 }
-
 
 img.techfab {
-    width: 80%
+    width: 80%;
 }
-
 
 .aboutPage {
     img {
@@ -224,7 +222,7 @@ img.techfab {
     }
 
     .about>div {
-        padding-bottom: 50px
+        padding-bottom: 50px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -238,7 +236,6 @@ img.techfab {
             }
         }
     }
-
 }
 
 /*  
@@ -274,7 +271,6 @@ img.techfab {
 
     h5 {
         font-size: 26px;
-        ;
     }
 
     .demoPhone {
@@ -282,7 +278,6 @@ img.techfab {
     }
 
     .democontainer {
-
         .mright {
             position: relative;
         }
@@ -346,7 +341,6 @@ img.techfab {
             background-repeat: no-repeat;
             padding: 40px 0;
             background-position: right;
-
         }
 
         @media only screen and (max-width: 768px) {
@@ -365,13 +359,11 @@ img.techfab {
         .grid-x {
             background-image: none !important;
         }
-
     }
 
     h4 {
         margin-bottom: 40px;
     }
-
 
     .localScroll {
         height: 383px;
@@ -421,25 +413,14 @@ img.techfab {
         left: 92px;
         z-index: 99;
     }
-
 }
-
-
-
-
-
 
 @supports not ((-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto)) {
     .demoPage .channelScroll {
-
-  left: 192px;
-  z-index: 99;
+        left: 192px;
+        z-index: 99;
+    }
 }
-}
-
-
-
-
 
 /*  
 ######################   
@@ -450,8 +431,8 @@ img.techfab {
     .members {
         span {
             font-size: 11px;
-            display:block;
-            margin-top:6px;
+            display: block;
+            margin-top: 6px;
 
             @media only screen and (max-width: 768px) {
                 font-size: 16px;
@@ -476,7 +457,7 @@ img.techfab {
             }
 
             img {
-                transition: all .25s ease-out;
+                transition: all 0.25s ease-out;
             }
 
             img:hover {
@@ -519,9 +500,8 @@ img.techfab {
 
         @media only screen and (max-width: 768px) {
             font-size: 2.3em;
-            margin-top: 10px
+            margin-top: 10px;
         }
-
 
         &.sub {
             font-weight: normal;
@@ -534,7 +514,6 @@ img.techfab {
             }
         }
     }
-
 }
 
 /*  
@@ -543,14 +522,11 @@ img.techfab {
 ###################### 
 */
 
-
-
 .faqPage {
-
     &.whiteBG2 {
         background-image: url("../../images/faqbg.png") !important;
         background-size: contain;
-        background-repeat: no-repeat
+        background-repeat: no-repeat;
     }
 
     .accord {
@@ -568,7 +544,7 @@ img.techfab {
 
         .accordion-title {
             border: none;
-            background: #F6F7FF;
+            background: #f6f7ff;
             padding: 20px;
             font-size: 16px;
             font-weight: 600;
@@ -608,14 +584,12 @@ img.techfab {
         @media only screen and (max-width: 700px) {
             .accordion li {
                 background: #f4f4f4;
-                margin-bottom: 10px
+                margin-bottom: 10px;
             }
 
             .accordion li .accordion-title {
                 padding: 20px 10px;
             }
-
         }
     }
-
 }

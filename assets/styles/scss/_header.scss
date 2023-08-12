@@ -76,9 +76,9 @@ header.header{
 	}
 }
 
-// body:not(.home) .top-bar ul li a {
-//   color: #fff;
-// }
+body:not(.home) .top-bar ul li a {
+  color: #fff;
+}
 
 // Quick fix for different nav on inner pages
 .top-bar .tert ul{

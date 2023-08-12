@@ -266,6 +266,10 @@ header.header {
   color: #fff;
 }
 
+body:not(.home) .top-bar ul li a {
+  color: #fff;
+}
+
 .top-bar .tert ul li a {
   color: #fff;
 }
@@ -370,6 +374,16 @@ body.whitepage .top-bar .tert ul li.partner:hover a, body.whitepage .top-bar .te
   margin-bottom: 0;
   line-height: normal;
   color: #454545;
+}
+@media only screen and (max-width: 700px) {
+  .whiteBG2 h2 .whiteBG2 h2,
+  .whiteBG2 h2 .whiteBG h2,
+  .whiteBG h2 .whiteBG2 h2,
+  .whiteBG h2 .whiteBG h2 {
+    font-size: 30px;
+    line-height: 35px;
+    margin-block: 15px;
+  }
 }
 .whiteBG2 h1,
 .whiteBG h1 {
@@ -794,7 +808,7 @@ img.techfab {
 }
 .faqPage .accord .accordion-title {
   border: none;
-  background: #F6F7FF;
+  background: #f6f7ff;
   padding: 20px;
   font-size: 16px;
   font-weight: 600;
