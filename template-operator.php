@@ -27,7 +27,7 @@ get_header(); ?>
                          <div class="large-10 cell">
                               <!-- content -->
                               <div class="grid-x grid-padding-x grid-padding-y align-center">
-                                   <div class="large-12 cell">
+                                   <div class="large-12 cell operator">
                                         <!-- <h2>Do you have questions</h2>
                                         Let us try to answer some. -->
 
