@@ -1,32 +1,33 @@
 <?php
+
 /** 
  * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
- */			
-	
+ */
+
 // Theme support options
-require_once(get_template_directory().'/functions/theme-support.php'); 
+require_once(get_template_directory() . '/functions/theme-support.php');
 
 // WP Head and other cleanup functions
-require_once(get_template_directory().'/functions/cleanup.php'); 
+require_once(get_template_directory() . '/functions/cleanup.php');
 
 // Register scripts and stylesheets
-require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
+require_once(get_template_directory() . '/functions/enqueue-scripts.php');
 
 // Register custom menus and menu walkers
-require_once(get_template_directory().'/functions/menu.php'); 
+require_once(get_template_directory() . '/functions/menu.php');
 
 // Register sidebars/widget areas
-require_once(get_template_directory().'/functions/sidebar.php'); 
+require_once(get_template_directory() . '/functions/sidebar.php');
 
 // Makes WordPress comments suck less
-require_once(get_template_directory().'/functions/comments.php'); 
+require_once(get_template_directory() . '/functions/comments.php');
 
 // Replace 'older/newer' post links with numbered navigation
-require_once(get_template_directory().'/functions/page-navi.php'); 
+require_once(get_template_directory() . '/functions/page-navi.php');
 
 // Adds support for multiple languages
-require_once(get_template_directory().'/functions/translation/translation.php'); 
+require_once(get_template_directory() . '/functions/translation/translation.php');
 
 // Adds site styles to the WordPress editor
 // require_once(get_template_directory().'/functions/editor-styles.php'); 
@@ -49,8 +50,9 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 
 // ADMIN STYLES
-function admin_seperators() {
-   echo '<style type="text/css">
+function admin_seperators()
+{
+  echo '<style type="text/css">
         #adminmenu li.wp-menu-separator {margin: 0; height: 8px; background:transparent !important; border-bottom: dotted #fff 2px; }
         .admin-color-fresh #adminmenu li.wp-menu-separator {background: #000;}
         #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap{background:#000}
@@ -71,25 +73,74 @@ function admin_seperators() {
 }
 
          </style>';
-        }        
+}
 add_action('admin_head', 'admin_seperators');
 
 
 // Repeatable fields
 
-function customize_add_button_atts( $attributes ) {
-  return array_merge( $attributes, array(
+function customize_add_button_atts($attributes)
+{
+  return array_merge($attributes, array(
     'text' => '+ Add Business',
     'additional_classes' => 'addBtn',
-  ) );
+  ));
 }
-add_filter( 'wpcf7_field_group_add_button_atts', 'customize_add_button_atts' );
+add_filter('wpcf7_field_group_add_button_atts', 'customize_add_button_atts');
 
 
-function customize_remove_button_atts( $attributes ) {
-  return array_merge( $attributes, array(
+function customize_remove_button_atts($attributes)
+{
+  return array_merge($attributes, array(
     'text' => '- Remove Business',
     'additional_classes' => 'removeBtn',
-  ) );
+  ));
 }
-add_filter( 'wpcf7_field_group_remove_button_atts', 'customize_remove_button_atts' );
+add_filter('wpcf7_field_group_remove_button_atts', 'customize_remove_button_atts');
+
+function rdsn_acf_repeater_collapse()
+{
+?>
+  <style id="rdsn-acf-repeater-collapse">
+    .acf-repeater .acf-table {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    jQuery(function($) {
+      $('.acf-repeater .acf-row').addClass('-collapsed');
+      $('#rdsn-acf-repeater-collapse').detach();
+    });
+  </script>
+<?php
+}
+add_action('acf/input/admin_head', 'rdsn_acf_repeater_collapse');
+
+
+
+// Operator page Ajax
+function filter_operator()
+{
+  $catSlug = $_POST['category'];
+
+  $ajaxposts = new WP_Query([
+    'post_type'  => 'operator',
+    'order'    => 'ASC',
+    'meta_key'      => 'state_code',
+    'meta_value'    => $catSlug
+  ]);
+  $response = '';
+
+  if ($ajaxposts->have_posts()) {
+    while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
+      $response .= get_template_part('parts/filter', 'operator');
+    endwhile;
+  } else {
+    $response = '';
+  }
+
+  echo $response;
+  exit;
+}
+add_action('wp_ajax_filter_operator', 'filter_operator');
+add_action('wp_ajax_nopriv_filter_operator', 'filter_operator');
