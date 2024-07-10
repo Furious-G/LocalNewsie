@@ -791,6 +791,7 @@ img.techfab {
 ###################### 
 */
 .faqPage.whiteBG2 {
+  background-image: url("../../images/faqbg.png") !important;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -801,13 +802,13 @@ img.techfab {
   margin-top: 20px;
 }
 .faqPage .accord .accordion-item {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   -webkit-box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.27);
   box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.27);
 }
 .faqPage .accord .accordion-title {
   border: none;
-  background: #f6f7ff;
+  background: #F6F7FF;
   padding: 20px;
   font-size: 16px;
   font-weight: 600;
@@ -831,8 +832,8 @@ img.techfab {
 .faqPage .accord .accordion-content {
   border: none;
   border: none !important;
-  font-size: 15px;
-  color: #000;
+  font-size: 16px;
+  color: #666;
 }
 .faqPage .accord :last-child:not(.is-active) > .accordion-title {
   border-bottom: none;
