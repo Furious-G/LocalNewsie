@@ -1,0 +1,150 @@
+/*  
+######################   
+    operator  
+###################### 
+*/
+
+.operator {
+     .whiteBG {
+          padding-top: 0;
+          border-radius: 20px 20px 6px 6px;
+     }
+
+     .terDetails {
+          padding: 0 30px;
+     }
+
+     h5 {
+          text-transform: uppercase;
+          font-weight: 400 !important;
+          font-size: 1.6rem;
+          margin-bottom: 0;
+
+     }
+
+     h1 {
+          color: #63c862;
+          @include poppins;
+          text-transform: uppercase;
+          font-size: 1.8rem;
+          font-weight: 900;
+          margin-bottom: initial;
+     }
+
+     .details {
+          padding: 20px 50px;
+          color: #454545;
+
+          .cell {}
+     }
+
+     .info {
+          color: #fff;
+     }
+
+     .theTitle {
+          padding-left: 0;
+     }
+
+     .coverImage {
+          border-radius: 14px 14px 0px 0px;
+     }
+
+     ul.links {
+          color: blue;
+          display: inline !important;
+          margin: 0;
+          margin-top: 20px !important;
+          ;
+     }
+
+     .links li {
+          display: inline;
+          font-size: .9rem;
+          font-weight: 600;
+          color: #0087c5;
+
+          &::after {
+               content: " | "
+          }
+
+          &:last-of-type:after {
+               content: "";
+          }
+
+          a:hover {
+               color: dimgray;
+          }
+
+     }
+
+     .infoContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 9px;
+          font-size: 0.9rem;
+
+     }
+
+     .infoContainer>div {
+          flex: 49%;
+          box-sizing: border-box;
+          /* or - flex: 0 50% - or - flex-basis: 50% - */
+          /*demo*/
+          padding: 10px;
+
+          &:last-of-type {
+               flex-basis: 100%;
+
+          }
+     }
+
+     .info {
+          font-weight: 600;
+
+          span {
+               font-weight: 800;
+          }
+     }
+
+     .info2 {
+          font-weight: 600;
+
+          a {
+               font-weight: 800;
+               color: $lightBlue;
+          }
+     }
+
+     .population {
+          background-color: #06492d;
+     }
+
+     .density {
+          background-color: #279b61;
+     }
+
+     .median {
+          background-color: #12724a;
+     }
+
+     .msa {
+          background-color: #63c862;
+     }
+
+     .zips {
+          background-color: #65a864;
+     }
+
+     img.licensed {
+          float: right;
+     }
+
+     img.screenshot {
+          position: absolute;
+          width: 220px;
+          left: 40px;
+          top: -110px;
+     }
+
+}

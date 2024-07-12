@@ -696,7 +696,7 @@ img.techfab {
   z-index: 99;
 }
 
-@supports not ((-webkit-hyphens: auto) or (hyphens: auto)) {
+@supports not (hyphens: auto) {
   .demoPage .channelScroll {
     left: 192px;
     z-index: 99;
@@ -1466,6 +1466,128 @@ footer .menu .active > a {
 
 /*  
 ######################   
+    operator  
+###################### 
+*/
+.operator .whiteBG {
+  padding-top: 0;
+  border-radius: 20px 20px 6px 6px;
+}
+.operator .terDetails {
+  padding: 0 30px;
+}
+.operator h5 {
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+.operator h1 {
+  color: #63c862;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: initial;
+}
+.operator .details {
+  padding: 20px 50px;
+  color: #454545;
+}
+.operator .info {
+  color: #fff;
+}
+.operator .theTitle {
+  padding-left: 0;
+}
+.operator .coverImage {
+  border-radius: 14px 14px 0px 0px;
+}
+.operator ul.links {
+  color: blue;
+  display: inline !important;
+  margin: 0;
+  margin-top: 20px !important;
+}
+.operator .links li {
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0087c5;
+}
+.operator .links li::after {
+  content: " | ";
+}
+.operator .links li:last-of-type:after {
+  content: "";
+}
+.operator .links li a:hover {
+  color: dimgray;
+}
+.operator .infoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 9px;
+  font-size: 0.9rem;
+}
+.operator .infoContainer > div {
+  -webkit-box-flex: 49%;
+      -ms-flex: 49%;
+          flex: 49%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* or - flex: 0 50% - or - flex-basis: 50% - */
+  /*demo*/
+  padding: 10px;
+}
+.operator .infoContainer > div:last-of-type {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.operator .info {
+  font-weight: 600;
+}
+.operator .info span {
+  font-weight: 800;
+}
+.operator .info2 {
+  font-weight: 600;
+}
+.operator .info2 a {
+  font-weight: 800;
+  color: #0087c5;
+}
+.operator .population {
+  background-color: #06492d;
+}
+.operator .density {
+  background-color: #279b61;
+}
+.operator .median {
+  background-color: #12724a;
+}
+.operator .msa {
+  background-color: #63c862;
+}
+.operator .zips {
+  background-color: #65a864;
+}
+.operator img.licensed {
+  float: right;
+}
+.operator img.screenshot {
+  position: absolute;
+  width: 220px;
+  left: 40px;
+  top: -110px;
+}
+
+/*  
+######################   
 	Util  
 ###################### 
 */
@@ -1503,6 +1625,10 @@ footer .menu .active > a {
 
 .pd-90 {
   padding: 90px;
+}
+
+.pd-t-0 {
+  padding-top: 0px !important;
 }
 
 .pd-t-10 {
@@ -1595,4 +1721,12 @@ footer .menu .active > a {
 
 .mg-t-30 {
   margin-top: 30px;
+}
+
+.padR-0 {
+  padding-right: 0 !important;
+}
+
+.nopad {
+  padding: 0 !important;
 }
