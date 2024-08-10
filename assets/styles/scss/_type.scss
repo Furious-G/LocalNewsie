@@ -6,62 +6,69 @@
 
 
 @mixin henriette {
-  	font-family: henriette, sans-serif;
+	font-family: henriette, sans-serif;
 	font-weight: 700;
 	font-style: normal;
 }
 
-@mixin sans{
+@mixin sans {
 	font-family: basic-sans, sans-serif;
 	font-style: normal;
 }
 
-@mixin lato{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
+@mixin lato {
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
 }
 
-@mixin poppins{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
+@mixin poppins {
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
 }
 
-@mixin lobster{
-    font-family: 'Lobster';
-    font-style: normal;
+@mixin work {
+	font-family: "work-sans", sans-serif !important;
+	font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6{
+
+
+@mixin lobster {
+	font-family: 'Lobster';
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	@include poppins;
 }
 
 
-h1{
+h1 {}
 
-}
-
-h2{
+h2 {
 	font-weight: 600;
 	font-size: 50px;
 	line-height: 68px;
-	color:#222;
-	margin-bottom:20px;
+	color: #222;
+	margin-bottom: 20px;
 }
 
-h3{
+h3 {
 	font-size: 1.5em;
 }
 
-h4{
+h4 {
 
-	font-size: 32px;;
-
-}
-
-h5{
+	font-size: 32px;
+	;
 
 }
 
-h6{
+h5 {}
 
-}
+h6 {}

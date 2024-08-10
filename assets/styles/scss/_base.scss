@@ -20,14 +20,15 @@ body:not(.home) h5 {
     font-weight: 600
 }
 
-.modal{
-  max-width: 700px !important;
-  h3{
-    font-weight:700;
-  }
+.modal {
+    max-width: 700px !important;
+
+    h3 {
+        font-weight: 700;
+    }
 }
 
-.blocker{
+.blocker {
     z-index: 60 !important;
 }
 
@@ -49,7 +50,8 @@ body:not(.home) h5 {
 
 }
 
-body.home .pageBG, body.whitepage .pageBG  {
+body.home .pageBG,
+body.whitepage .pageBG {
     // background-color:#fff;
     // height: calc(100vh);
     // background-image: url("../../images/background.jpg");
@@ -74,6 +76,11 @@ blockquote {
     border-color: $xorange !important;
     color: $txt;
 }
+
+select {
+    @include lato;
+}
+
 
 
 /*  
@@ -172,11 +179,87 @@ blockquote {
     background: linear-gradient(to right, $xorange 0%, #F6844A 100%);
     transition: all .25s ease-out;
     display: inline-block;
-    &:hover,&:focus{
-    	color:#fff;
-    	scale:1.1;
-     	background: -moz-linear-gradient(left, #F6844A 0%, $xorange 100%);
-    	background: -webkit-linear-gradient(left, #F6844A 0%, $xorange 100%);
-    	background: linear-gradient(to right, #F6844A 0%, $xorange 100%);
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        scale: 1.1;
+        background: -moz-linear-gradient(left, #F6844A 0%, $xorange 100%);
+        background: -webkit-linear-gradient(left, #F6844A 0%, $xorange 100%);
+        background: linear-gradient(to right, #F6844A 0%, $xorange 100%);
+    }
+}
+
+[hover-tooltip] {
+    $caret-height: 8px;
+    $caret-width: 8px;
+    $distance: 10px;
+    $tooltip-bg-color: #f0552a;
+    z-index: 99;
+
+    position: relative;
+    cursor: default;
+
+    &:hover {
+        &::before {
+            content: attr(hover-tooltip);
+            font-size: 14px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            left: 50%;
+            min-width: 70px;
+            max-width: 200px;
+            bottom: calc(100% + #{$distance});
+            transform: translate(-50%);
+            animation: fade-in 300ms ease;
+            background: $tooltip-bg-color;
+            border-radius: 4px;
+            padding: 5px;
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 40%;
+            width: 0;
+            height: 0;
+            bottom: calc(100% + #{$distance - $caret-height});
+            margin-left: - $caret-width/2;
+            border: 1px solid black;
+            border-color: $tooltip-bg-color transparent transparent transparent;
+            border-width: $caret-height $caret-width 0;
+            animation: fade-in 300ms ease;
+            z-index: 1;
+        }
+    }
+
+    &[tooltip-position="bottom"] {
+        &:hover {
+            &::before {
+                bottom: auto;
+                top: calc(100% + #{$distance});
+            }
+
+            &::after {
+                bottom: auto;
+                top: calc(100% + #{$distance - $caret-height});
+                border-color: transparent transparent $tooltip-bg-color;
+                border-width: 0 $caret-width $caret-height;
+            }
+        }
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
