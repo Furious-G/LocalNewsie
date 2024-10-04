@@ -28,6 +28,8 @@ query_posts(array(
 
 ));
 
+$currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $msa . "&territory=" . $territory . "&status=related"
+
 ?>
 
 <div class="large-12 cell nopad">
@@ -38,6 +40,7 @@ query_posts(array(
                               <?php while (have_rows('territory')) : the_row(); ?>
 
                                    <?php if (get_sub_field('territory_name') == $territory) : ?>
+                                        <?php $territoryName = get_sub_field('territory_name') ?>
                                         <!--DETAILS -->
 
                                         <?php $count = count(get_sub_field('coverslider_images')) ?>
@@ -47,11 +50,14 @@ query_posts(array(
                                              <?php if ($count == 1) : ?>
                                                   <div class="singleCover">
                                                   <?php else : ?>
+
                                                        <div class="owl-carousel owl-theme" id="cover">
                                                        <? endif; ?>
                                                        <?php while (have_rows('coverslider_images')) : the_row(); ?>
+                                                            <?php $SlideImage = get_sub_field('slider_image'); ?>
                                                             <div class="">
-                                                                 <img src="<?php the_sub_field('slider_image'); ?>" alt="">
+                                                                 <span class="sliderCaption"><?php echo $SlideImage['caption']; ?></span>
+                                                                 <img src="<?php echo esc_url($SlideImage['url']); ?>" alt="">
                                                             </div>
                                                        <?php endwhile; ?>
                                                        </div>
@@ -63,9 +69,9 @@ query_posts(array(
 
                                                   <div class="grid-container terDetails">
                                                        <div class="grid-x grid-padding-x grid-padding-y">
-                                                            <div class="large-8 cell" style="padding-right:0" ;>
+                                                            <div class="large-8 medium-7 cell" style="padding-right:0" ;>
                                                                  <?php if (get_sub_field('active')) : ?>
-                                                                      <span class="licensed"><span hover-tooltip="<?php the_sub_field('active_badge_tooltip') ?>"><img width="40" alt="Licensed" src="<?php echo get_template_directory_uri() . '/assets/images/licensed.png' ?>"></span></span>
+                                                                      <span class="licensed"><span class="tooltippy" data-text="<?php the_sub_field('active_badge_tooltip') ?>"><img width="40" alt="Licensed" src="<?php echo get_template_directory_uri() . '/assets/images/licensed.png' ?>"></span></span>
                                                                  <?php endif; ?>
                                                                  <h5>
                                                                       TERRITORY <?php the_sub_field('territory_id'); ?>
@@ -88,21 +94,23 @@ query_posts(array(
                                                                  <!-- Links -->
                                                                  <ul class="links">
                                                                       <li><a href="<?php echo the_sub_field("map_link") ?>" target="_blank">View Map</a></li>
-                                                                      <li><a href="<?php the_sub_field("facebook") ?>" target="_blank">Facebook</a></li>
-                                                                      <li><a href="<?php the_sub_field("instagram") ?>" target="_blank">Instagram</a></li>
+                                                                      <li><?php if (get_sub_field("facebook")): ?><a href="<?php the_sub_field("facebook") ?>" target="_blank">Facebook</a><?php else: ?><span style="color:#dadce0">Facebook</span><?php endif ?></li>
+                                                                      <li><?php if (get_sub_field("instagram")): ?><a href="<?php the_sub_field("instagram") ?>" target="_blank">Instagram</a><?php else: ?><span style="color:#dadce0">Instagram</span><?php endif ?></li>
+                                                                      <li><span id="sharelink" data-url="<?php echo $currentUrl; ?>"><i class="fa-solid fa-link"></i> <span id="shareText"><span>Copy </span>Link</span></span></li>
 
                                                                  </ul>
                                                                  <!-- End Links  -->
                                                             </div>
                                                             <!-- Screenshot -->
-                                                            <div class="large-4 cell text-right" style="position: relative;">
+                                                            <div class="large-4 medium-5 cell text-right hide-for-small-only" style="position: relative;">
 
                                                                  <img class="screenshot phoneframe" width="40" alt="Licensed" src="<?php echo get_template_directory_uri() . '/assets/images/phoneframeshadow.png' ?>">
                                                                  <img class=" screenshot" src="<?php the_sub_field('screenshot_image'); ?>">
+
                                                             </div>
                                                             <!-- End Screenshot -->
                                                             <!-- Main Details -->
-                                                            <div class="large-9 cell padR-0 pd-t-0">
+                                                            <div class="large-9 medium-9 cell padR-0 pd-t-0 infoblock">
                                                                  <div class="infoContainer">
                                                                       <div class="population info">
                                                                            Population<br />
@@ -169,20 +177,48 @@ query_posts(array(
                                                             </div>
                                                             <!-- End Chamber -->
                                                             <!-- Publishers -->
-                                                            <div class="large-12 cell pubs">
+                                                            <div class="large-12 cell pubs hide-for-small-only">
                                                                  <hr />
                                                                  <?php if (have_rows('publishers')) : ?>
                                                                       <h5>Publishers</h5>
                                                                       <div class="publisher" id="publishers">
                                                                            <?php while (have_rows('publishers')) : the_row(); ?>
                                                                                 <?php $publisher = get_sub_field('publisher'); ?>
-                                                                                <span hover-tooltip="<?php echo str_replace('-aspect-ratio-100-100', '', $publisher['title']); ?>"><img src="<?php echo esc_url($publisher['url']); ?>"></span>
+                                                                                <span class="tooltippy" data-text="<?php echo str_replace('-aspect-ratio-100-100', '', $publisher['title']); ?>"><img src="<?php echo esc_url($publisher['url']); ?>"></span>
                                                                            <?php endwhile; ?>
                                                                       </div>
                                                                  <?php endif; ?>
                                                             </div>
                                                             <!-- End Publishers -->
+                                                            <!-- mobile only -->
+                                                            <div class="large-12 cell mobilePreview show-for-small-only">
+                                                                 <!-- <h5>Mobile Preview</h5> -->
+                                                                 <div class="phoneContainer text-center">
+                                                                      <img class="screen" src="<?php the_sub_field('screenshot_image'); ?>">
+                                                                      <img class="frame" alt="Licensed" src="<?php echo get_template_directory_uri() . '/assets/images/phoneframeshadow.png' ?>">
+                                                                      <div class="downloadBox"><a href="https://newsie.page.link/sQZE" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/downloads.png">Download Newsie</a></div>
+                                                                 </div>
+                                                            </div>
+
+                                                            <!-- Publishers -->
+                                                            <div class="large-12 cell mobilePreview show-for-small-only pubs">
+                                                                 <hr />
+                                                                 <?php if (have_rows('publishers')) : ?>
+                                                                      <h5>Publishers</h5>
+                                                                      <div class="publisher" id="publishers">
+                                                                           <?php while (have_rows('publishers')) : the_row(); ?>
+                                                                                <?php $publisher = get_sub_field('publisher'); ?>
+                                                                                <span class="tooltippy" data-text="<?php echo str_replace('-aspect-ratio-100-100', '', $publisher['title']); ?>"><img src="<?php echo esc_url($publisher['url']); ?>"></span>
+                                                                           <?php endwhile; ?>
+                                                                      </div>
+                                                                 <?php endif; ?>
+                                                            </div>
+                                                            <!-- End Publishers -->
+                                                            <!-- mobile only -->
                                                        </div>
+                                                  </div>
+                                                  <div class="operatorCTA">
+                                                       <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/newsie-icon-sm.png">Interested in being the <a href="https://localnewsie.com/local-newsie-program">Local Newsie</a> for <?php echo $territoryName ?>? <a href="https://localnewsie.com/local-newsie-application">Apply now!</a></div>
                                                   </div>
                                                   <!-- End DETAILS -->
                                              <?php endif; ?>
@@ -204,6 +240,7 @@ query_posts(array(
 <script>
      // Select bos action ++++++++++++
      jQuery(document).ready(function($) {
+          $('body').removeClass('not-rendered');
           $('#cover').owlCarousel({
                loop: true,
                nav: true,
@@ -215,7 +252,22 @@ query_posts(array(
                navText: ["<i class='fa-solid fa-chevrons-left'></i>", "<i class='fa-solid fa-chevrons-right'></i>"]
           });
 
+          let shareBtn = document.getElementById("sharelink");
+          let shareText = document.getElementById("shareText");
+          let textToCopy = shareBtn.dataset.url
 
+          shareBtn.addEventListener("click", copyText);
+
+
+          function copyText(urlLink) {
+               navigator.clipboard.writeText(textToCopy);
+               if ($(window).width() > 767) {
+                    shareText.innerHTML = "Link Copied";
+               } else {
+                    shareText.innerHTML = "Copied";
+               }
+
+          }
 
      });
 </script>

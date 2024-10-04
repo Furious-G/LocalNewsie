@@ -59,9 +59,9 @@ get_header(); ?>
 
 		</section>
 
-		<section class="grid-container secPad">
+		<!-- <section class="grid-container secPad">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/color.jpg" class="wow zoomIn" data-wow-delay=".3s" />
-		</section>
+		</section> -->
 
 		<section class="grid-container homeContact secPad">
 			<div class="grid-x grid-padding-x">
@@ -107,7 +107,7 @@ get_header(); ?>
 
 				<div class="cell large-6 text-center flex-container align-right  wow slideInRight" data-wow-delay=".3s">
 					<div>
-						<span>Get in touch with us</span>
+						<!-- <span>Get in touch with us</span> -->
 						<div class="contactContainer">
 							<?php echo do_shortcode("[contact-form-7 id='329' title='Home Contact form']"); ?>
 						</div>

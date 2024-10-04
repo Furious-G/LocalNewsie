@@ -4,21 +4,62 @@
 ###################### 
 */
 
+// @include device-below(notebook) {
+//      div {
+//           border: solid 1px red;
+
+//      }
+
+// }
+
+// @include device-below(tabletpro) {
+//      div {
+//           border: solid 1px green;
+
+//      }
+
+// }
+
+// @include device-below(tablet) {
+//      div {
+//           border: solid 1px blue;
+
+//      }
+
+// }
+
 .operator {
      @include work;
 
      .operator-list {
           padding-inline: 10px;
+
+          @include device-below(tablet) {
+               padding-inline: 0;
+               padding-block: 10px;
+          }
      }
 
      .whiteBG {
           padding-top: 0;
           border-radius: 20px 20px 6px 6px;
+          margin-bottom: 30px;
+
+          @include device-below(tablet) {
+               box-shadow: none;
+               border-radius: 0;
+               margin-bottom: 0;
+          }
      }
 
      .terDetails {
-          padding: 0 30px;
+
+          @include device-above(notebook) {
+               padding: 0 30px;
+          }
      }
+
+
 
      h5 {
           text-transform: uppercase;
@@ -63,10 +104,30 @@
                border-radius: 14px 14px 0px 0px;
                height: 330px;
                object-fit: cover;
+
+               @include device-below(tablet) {
+                    border-radius: unset
+               }
           }
 
           height: 330px;
           margin-bottom: 10px;
+     }
+
+     .sliderCaption {
+          position: absolute;
+          right: 40px;
+          top: 20px;
+
+          @include device-below(tablet) {
+               top: 150px;
+               right: 15px;
+          }
+
+          color: #fff;
+          font-weight: 500;
+          font-size: 14px;
+          text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.76);
      }
 
      .placeHolder {
@@ -99,7 +160,9 @@
           color: #0087c5;
 
           &::after {
-               content: " | "
+               content: " | ";
+               color: #dadce0;
+               font-weight: normal;
           }
 
           &:last-of-type:after {
@@ -117,7 +180,24 @@
           flex-wrap: wrap;
           gap: 9px;
           font-size: 0.9rem;
-          padding-right: 51px;
+          padding-right: 31px;
+
+          @include device-below(notebook) {
+               padding-right: 61px;
+
+          }
+
+          @include device-below(tablet) {
+               padding-right: 0;
+
+          }
+
+          div:nth-last-child(-n+3) {
+
+               @include device-below(notebook) {
+                    flex-basis: 100%
+               }
+          }
 
      }
 
@@ -181,18 +261,27 @@
      .licensed {
           float: right;
           position: relative;
-          left: 23px;
+          left: 43px;
+
+          @include device-below(notebook) {
+               left: 63px;
+
+          }
+
+          @include device-below(tablet) {
+               left: -10px;
+          }
 
           img {
                width: 35px;
           }
 
-          [hover-tooltip]:hover::after {
+          .tooltippy:hover::after {
 
                border-color: #7fc56e transparent transparent transparent;
           }
 
-          [hover-tooltip]:hover::before {
+          .tooltippy:hover::before {
                background: #7fc56e
           }
      }
@@ -201,15 +290,38 @@
           position: absolute;
           top: -106px;
           width: 202px;
-          left: 63px;
+          left: 66px;
           border-radius: 20px;
           z-index: 1;
 
+          @include device-below(notebook) {
+               left: 96px;
+               top: -31px;
+
+          }
+
+          @include device-below(tabletpro) {
+               left: 81px;
+
+          }
+
           &.phoneframe {
                width: 225px;
-               left: 52px;
+               left: 55px;
                top: -113px;
                z-index: 99;
+               z-index: 2;
+
+               @include device-below(notebook) {
+                    left: 85px;
+                    top: -39px;
+
+               }
+
+               @include device-below(tabletpro) {
+                    left: 70px;
+
+               }
           }
 
      }
@@ -251,7 +363,7 @@
           hr {
 
                margin: 0 0 15px 0;
-               border-color: #bfbfbf
+               border-color: #dadce0
           }
 
           .publisher {
@@ -259,19 +371,37 @@
                // border: solid 1px;
                display: flex;
                align-content: center;
-               padding: 15px 0 30px 0;
+               padding: 15px 0 20px 0;
                gap: 13px;
                flex-wrap: wrap;
+
+               @include device-below(tablet) {
+                    margin-left: -4px
+               }
 
                img {
                     width: 60px;
                     height: 60px;
+
+                    @include device-below(tablet) {
+                         width: 70px;
+                         height: 70px;
+                    }
+
                     border: solid 3px #fff;
                     border-radius: 50%;
                     margin: 0 2px;
                     -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.27);
                     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.27);
 
+               }
+
+               .tooltippy:hover::after {
+                    border-color: $xorange transparent transparent transparent;
+               }
+
+               .tooltippy:hover::before {
+                    background: $xorange;
                }
           }
      }
@@ -288,11 +418,25 @@
                padding: initial;
 
                border-radius: 14px 14px 0px 0px;
+
+               @include device-below(tablet) {
+                    border-radius: unset
+               }
           }
 
           img {
                height: 330px;
                object-fit: cover;
+
+               @include device-below(notebook) {
+                    height: 290px;
+
+               }
+
+               @include device-below(tablet) {
+                    height: 180px;
+
+               }
           }
 
           .owl-nav {
@@ -300,7 +444,12 @@
                top: 45%;
                width: 100%;
                color: rgba(255, 255, 255, .5);
-               font-size: 30px
+               font-size: 30px;
+
+               @include device-below(tablet) {
+                    display: none;
+
+               }
           }
 
           .owl-prev {
@@ -319,18 +468,7 @@
      }
 
      .tempHolder {
-          img {
-               border-radius: 14px 14px 0 0;
-          }
-     }
-
-     .whiteBG {
-
-          padding-bottom: 0;
-     }
-
-     .tempHolder {
-          min-height: 300px;
+          min-height: 500px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -339,29 +477,231 @@
                font-size: 80px;
                color: $xorange;
           }
+
+          img {
+               border-radius: 14px 14px 0 0;
+          }
+
+          @include device-below(notebook) {
+               align-items: start;
+
+          }
      }
-}
 
-.changelayout {
+     .whiteBG {
 
-     select {
-          margin: 0;
-          border-radius: 6px;
-          color: #454545;
+          padding-bottom: 0;
+
+          @include device-below(notebook) {
+               padding: 0 !important;
+
+          }
+     }
+
+     #sharelink {
+          cursor: pointer;
+
+          #shareText span {
+               @include device-below(tablet) {
+                    display: none;
+
+               }
+          }
+     }
+
+     .changelayout {
+          padding-inline: 0;
+
+          select {
+               margin: 0;
+               border-radius: 6px;
+               color: #454545;
+               font-size: 15px;
+
+          }
+
+          .selectList {
+               display: flex;
+
+               @include device-below(tablet) {
+                    flex-direction: column;
+               }
+
+               div {
+                    flex: 1 1 0px;
+                    width: 100%
+               }
+
+               @include device-below(tablet) {
+                    padding: .625rem;
+
+               }
+          }
+
+          .mobilePreview {
+               // min-height: 790px;
+          }
+
+
+          @include device-below(notebook) {
+               padding-inline: 20px !important;
+          }
+
+          @include device-below(tablet) {
+               padding-inline: 0px !important;
+
+          }
+
+
+
+     }
+
+     @include device-below(tablet) {
+          .infoblock {
+               padding-right: .625rem !important;
+
+          }
+
+     }
+
+     .phoneContainer {
+          position: relative;
+          width: 95%;
+          margin: 0 auto;
+          margin-top: 20px;
+
+          @include device-below(notebook) {
+               margin-bottom: 30px;
+          }
+
+          .screen {
+               width: 90%;
+               border-radius: 30px;
+               position: relative;
+               left: 0;
+               top: 10px;
+
+               @include device-below(tablet) {
+                    top: -10px;
+               }
+          }
+
+          .frame {
+               position: absolute;
+               top: 0;
+               left: 1px;
+
+               @include device-below(tablet) {
+                    top: -20px;
+               }
+          }
+     }
+
+     .downloadBox {
+          z-index: 999;
+          position: relative;
+          bottom: -30px;
+          background: #f1faff;
+          color: #0087c5;
+          width: 200px;
+          display: inline-block;
+          text-align: left;
+          font-weight: 700;
           font-size: 15px;
+          border-radius: 20px;
+          text-align: center !important;
+          padding: 2px;
+          // right: 14px;
+          padding: 10px 15px;
 
-     }
+          i {
+               font-size: 20px;
+               padding-right: 8px
+          }
 
-     .selectList {
-          display: flex;
-
-          div {
-               flex: 1 1 0px;
-               width: 100%
+          img {
+               width: 17px;
+               margin-right: 10px;
           }
      }
 
 }
+
+.operatorCTA {
+     display: flex;
+     background: rgb(95, 192, 94);
+     background: linear-gradient(90deg, rgba(95, 192, 94, 1) 0%, rgba(7, 71, 43, 1) 100%);
+     align-items: center;
+     flex-wrap: wrap;
+     font-size: 14px;
+
+     div {
+          padding: 13px 30px;
+          color: #fff;
+          // white-space: nowrap;
+
+          img {
+               width: 25px;
+               margin-right: 10px;
+               position: relative;
+               top: -4px;
+          }
+     }
+
+     a {
+          color: #fff;
+          padding-bottom: 2px;
+          display: inline-block;
+          border-bottom: solid 1px #fff;
+          font-weight: 700;
+
+          &:hover {
+               color: #fff;
+               border: none;
+          }
+
+     }
+}
+
+.page-template-template-operator {
+     .footer {
+          @include device-below(tablet) {
+               display: none;
+          }
+     }
+}
+
+.not-rendered {
+     background: $xorange;
+
+     .whiteBG {
+          margin-bottom: 0;
+          border-radius: 20px;
+     }
+
+     .footer {
+          margin-top: 0;
+
+          @include device-below(tablet) {
+               display: block;
+          }
+     }
+
+     .subFooter {
+          background: #fff;
+     }
+
+     .tempHolder img {
+          border-radius: 20px;
+     }
+
+     .tempHolder {
+          border-radius: 22px;
+     }
+}
+
+
+
 
 .loader {
      width: 80px;

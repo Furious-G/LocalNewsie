@@ -11,14 +11,16 @@ get_header();
 <div class="container">
      <section class="grid-container operator">
           <div class="grid-x grid-padding-x align-center">
-               <div class="cell large-9 changelayout" style="padding-inline:0">
+               <div class="cell large-9 changelayout">
 
 
                     <div class="selectList">
                          <div>
                               <?php
                               query_posts(array(
-                                   'post_type'  => 'operator'
+                                   'post_type'  => 'operator',
+                                   'orderby' => 'title',
+                                   'order' => 'DESC'
                               ));
                               ?>
                               <select id="state" name="state" autocomplete="off">
@@ -55,12 +57,18 @@ get_header();
           </div>
      </section>
 </div><!-- end #container -->
+
 <script>
      // Select bos action ++++++++++++
      jQuery(document).ready(function($) {
-
           url = new URL(window.location.href);
-          let coverImage = "<img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tempholder2.png' />";
+          let coverImage
+          if (window.innerWidth < 768) {
+               coverImage = "<img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tempholder2mobile.png' />";
+          } else {
+               coverImage = "<img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tempholder2.png' />";
+          }
+          $("body").addClass('not-rendered');
           // alert(coverImage);
           // check to see if querystring exists and if so go to the details page
           if (url.searchParams.has('state')) {

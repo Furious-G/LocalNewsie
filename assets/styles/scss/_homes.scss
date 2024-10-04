@@ -17,8 +17,8 @@
 
 }
 
-.home .hero{
-    width:90%;
+.home .hero {
+    width: 90%;
 }
 
 .theta-carousel-outer-container .tc-button {
@@ -97,7 +97,7 @@
             background: #FAFAFA;
             border: solid 1px #ddd;
             padding: 30px;
-            margin-top: 20px;
+            // margin-top: 20px;
             border-radius: 6px;
             position: relative;
 
@@ -224,9 +224,8 @@
 
 
 
-.secPad{
-  padding-bottom:60px
-
+.secPad {
+    padding-bottom: 60px
 }
 
 // owl carousel
@@ -262,39 +261,43 @@
 
 
 
-.poweredBy{
-  display: flex;
-  justify-content:space-between;
-  @media only screen and (max-width: 700px) {
-  flex-wrap: wrap;
-}
-  
-}
-.poweredBy > div{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  @media only screen and (max-width: 700px) {
-    flex:1 1 180px;
-     padding:20px 0;
-        }
+.poweredBy {
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 700px) {
+        flex-wrap: wrap;
+    }
 
 }
-.poweredBy img {
-  height: 40px;
-  display: block !important;
-  margin: 0 auto;
-  opacity: 0.5;
-  width: auto;
-  transition: all .25s ease-out;
-    &:hover {
-  opacity: 1;
+
+.poweredBy>div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @media only screen and (max-width: 700px) {
+        flex: 1 1 180px;
+        padding: 20px 0;
+    }
+
 }
+
+.poweredBy img {
+    height: 40px;
+    display: block !important;
+    margin: 0 auto;
+    opacity: 0.5;
+    width: auto;
+    transition: all .25s ease-out;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-  .poweredBy img {
-    opacity: 1;
-  }
+    .poweredBy img {
+        opacity: 1;
+    }
 }
-

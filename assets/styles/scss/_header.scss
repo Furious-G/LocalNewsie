@@ -4,71 +4,79 @@
 ###################### 
 */
 
-header.header{
-	margin-top:15px;
-	position:relative;
+header.header {
+	margin-top: 15px;
+	position: relative;
 	z-index: 40;
 }
 
-.top-bar{
-	.mainLogo{
-		height:65px;
+.top-bar {
+	.mainLogo {
+		height: 65px;
 		width: 279px;
-	@media only screen and (max-width: 700px) {
 
-		}
+		@media only screen and (max-width: 700px) {}
 	}
+
 	background:transparent;
 	@include sans;
-	.menu{
-		i{
+
+	.menu {
+		i {
 			font-size: 28px;
 		}
 	}
-	ul{
-		background:transparent;
 
-		li{
-			margin:0 20px;
+	ul {
+		background: transparent;
+
+		li {
+			margin: 0 20px;
+
 			@media only screen and (max-width: 768px) {
-				margin:0 10px;
+				margin: 0 10px;
 			}
 
-			a{
-				color:$xorange;
-				padding:10px 0 !important;
-				background:transparent !important;
-				border-bottom:solid 1px transparent;
-				font-size:18px;
-				&:hover{
-					border-color: $xorange;
-					color:$xorange;
+			a {
+				color: $xorange;
+				padding: 10px 0 !important;
+				background: transparent !important;
+				border-bottom: solid 1px transparent;
+				font-size: 18px;
+
+				&:hover {
+					border-color: #fff;
+					color: $xorange;
 				}
 			}
 
-			&.active{
-				background:transparent;
+			&.active {
+				background: transparent;
 
-				a{
-					border-bottom:solid 1px #fff;
+				a {
+					border-bottom: solid 1px $xorange;
+					color: $xorange;
 				}
 			}
 
 
-			&.partner,&.launch{
-				border:solid 1px $xorange;
-				border-radius:6px;
+			&.partner,
+			&.launch {
+				border: solid 1px #fff;
+				border-radius: 6px;
 
-				a{
-					padding:10px !important;
-					border:none;
-					color:$xorange;
+				a {
+					padding: 10px !important;
+					border: none;
+					color: $xorange;
 				}
-				&:hover{
-					background:$xorange;
-					a{
-						border:none;
-						color:#fff;
+
+				&:hover {
+					background: #fff;
+
+					a {
+						border: none;
+						color: $xorange;
 					}
 				}
 			}
@@ -77,63 +85,72 @@ header.header{
 }
 
 body:not(.home) .top-bar ul li a {
-  color: #fff;
+	color: #fff;
 }
 
 // Quick fix for different nav on inner pages
-.top-bar .tert ul{
-	li a{
-		color:#fff;
-		&:hover{
-			border-color:#fff;
-			color:#fff;
+.top-bar .tert ul {
+	li a {
+
+		// color:#fff;
+		&:hover {
+			border-color: #fff;
+			color: #fff;
 		}
 	}
 
-	li.partner,li.launch{
-		border-color:#fff;
-		  border-radius:6px;
-		&:hover{
-			background:#fff;
-			a{
-			color:$xorange;
+	li.partner,
+	li.launch {
+		border-color: $xorange;
+		border-radius: 6px;
+
+		&:hover {
+			background: #fff;
+
+			a {
+				color: $xorange;
 			}
 		}
 	}
 }
 
 // Quick fix for .white pages
-body.whitepage .top-bar .tert ul{
-	li a{
-		color:$xorange;
-		&:hover{
-			border-color:$xorange;
-			color:$xorange;
+body.whitepage .top-bar .tert ul {
+	li a {
+		color: $xorange;
+
+		&:hover {
+			border-color: $xorange;
+			color: $xorange;
 		}
 	}
 
-	li.partner,li.launch{
-		border-color:$xorange;
-		  border-radius:6px;
-		&:hover{
-			background:$xorange;
-			a{
-			color:#fff;
+	li.partner,
+	li.launch {
+		border-color: $xorange;
+		border-radius: 6px;
+
+		&:hover {
+			background: $xorange;
+
+			a {
+				color: #fff;
 			}
 		}
 	}
 }
 
 
-.off-canvas{
-	background:#333;
+.off-canvas {
+	background: #333;
+
 	.menu {
-		a{
-			color:#fff;
+		a {
+			color: #fff;
 		}
-		.active > a {
+
+		.active>a {
 			background: $xorange;
 		}
 	}
 }
-

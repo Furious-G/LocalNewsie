@@ -190,6 +190,8 @@ function display_operator_titles_with_territory_count()
   $args = array(
     'post_type' => 'operator',
     'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC'
   );
 
   $operator_query = new WP_Query($args);
