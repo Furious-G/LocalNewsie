@@ -356,7 +356,21 @@
 
      .chahamber2 {
           display: inline-block;
-          text-indent: 75px
+          margin-left: 75px;
+
+          @include device-below(xsmall) {
+               margin-left: unset;
+
+               br {
+                    display: none;
+               }
+          }
+     }
+
+     .cham {
+          @include device-below(xsmall) {
+               display: block;
+          }
      }
 
      .pubs {

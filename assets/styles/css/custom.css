@@ -1128,6 +1128,7 @@ img.techfab {
   font-size: 22px;
   font-weight: 600;
   padding: 20px 0;
+  white-space: nowrap;
 }
 .homeAccord .accordion-title:before {
   content: "";
@@ -1161,6 +1162,7 @@ img.techfab {
   }
   .homeAccord .accordion li .accordion-title {
     padding: 20px 10px;
+    text-wrap: wrap;
   }
 }
 
@@ -1878,7 +1880,20 @@ footer .menu .active > a {
 }
 .operator .chahamber2 {
   display: inline-block;
-  text-indent: 75px;
+  margin-left: 75px;
+}
+@media (max-width: 389px) {
+  .operator .chahamber2 {
+    margin-left: unset;
+  }
+  .operator .chahamber2 br {
+    display: none;
+  }
+}
+@media (max-width: 389px) {
+  .operator .cham {
+    display: block;
+  }
 }
 .operator .pubs hr {
   margin: 0 0 15px 0;

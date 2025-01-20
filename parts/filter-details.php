@@ -93,7 +93,7 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                  <h1><?php the_sub_field('territory_name'); ?></h1>
                                                                  <!-- Links -->
                                                                  <ul class="links">
-                                                                      <li><a href="<?php echo the_sub_field("map_link") ?>" target="_blank">View Map</a></li>
+                                                                      <li><?php if (get_sub_field("map_link")): ?><a href="<?php echo the_sub_field("map_link") ?>" target="_blank">View Map</a><?php else: ?><span style="color:#dadce0">View Map</span><?php endif ?></li>
                                                                       <li><?php if (get_sub_field("facebook")): ?><a href="<?php the_sub_field("facebook") ?>" target="_blank">Facebook</a><?php else: ?><span style="color:#dadce0">Facebook</span><?php endif ?></li>
                                                                       <li><?php if (get_sub_field("instagram")): ?><a href="<?php the_sub_field("instagram") ?>" target="_blank">Instagram</a><?php else: ?><span style="color:#dadce0">Instagram</span><?php endif ?></li>
                                                                       <li><span id="sharelink" data-url="<?php echo $currentUrl; ?>"><i class="fa-solid fa-link"></i> <span id="shareText"><span>Copy </span>Link</span></span></li>
@@ -146,15 +146,15 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                             <!-- Chamber -->
                                                             <div class="cell large-8 info2" style="padding-top:0; padding-bottom:0">
                                                                  CHAMBER:
-                                                                 <span>
-                                                                      <a href="<?php the_sub_field('chamber_of_commerce_url'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce'); ?></a>
+                                                                 <span class="cham">
+                                                                      <a href=" <?php the_sub_field('chamber_of_commerce_url'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce'); ?></a>
                                                                       <?php if (get_sub_field('member_numbers')) : ?>
                                                                            <span>(<em><?php number_format(the_sub_field('member_numbers')); ?> members</em>)</span>
                                                                       <?php endif; ?>
                                                                  </span>
                                                                  <?php if (get_sub_field('chamber_of_commerce2')) : ?>
-                                                                      <br />
-                                                                      <span class="chahamber2">
+                                                                      <span class="chahamber2 cham">
+                                                                           <br />
                                                                            <a href="<?php the_sub_field('chamber_of_commerce_url2'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce2'); ?></a>
                                                                       </span>
                                                                       <span>
@@ -164,8 +164,8 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                       </span>
                                                                  <?php endif; ?>
                                                                  <?php if (get_sub_field('chamber_of_commerce3')) : ?>
-                                                                      <br />
-                                                                      <span class="chahamber2">
+                                                                      <span class="chahamber2 cham">
+                                                                           <br />
                                                                            <a href="<?php the_sub_field('chamber_of_commerce_url3'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce3'); ?></a>
                                                                       </span>
                                                                       <span>
@@ -217,9 +217,14 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                             <!-- mobile only -->
                                                        </div>
                                                   </div>
-                                                  <div class="operatorCTA">
-                                                       <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/newsie-icon-sm.png">Interested in being the <a href="https://localnewsie.com/local-newsie-program">Local Newsie</a> for <?php echo $territoryName ?>? <a href="https://localnewsie.com/local-newsie-application">Apply now!</a></div>
-                                                  </div>
+                                                  <?php if (get_sub_field('active')) : ?>
+
+
+                                                  <?php else : ?>
+                                                       <div class="operatorCTA">
+                                                            <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/newsie-icon-sm.png">Interested in being the <a href="https://localnewsie.com/local-newsie-program">Local Newsie</a> for <?php echo $territoryName ?>? <a href="https://localnewsie.com/local-newsie-application">Apply now!</a></div>
+                                                       </div>
+                                                  <?php endif; ?>
                                                   <!-- End DETAILS -->
                                              <?php endif; ?>
                                         <?php endwhile; ?>
@@ -255,6 +260,8 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
           let shareBtn = document.getElementById("sharelink");
           let shareText = document.getElementById("shareText");
           let textToCopy = shareBtn.dataset.url
+
+          textToCopy = textToCopy.replace(/ /g, "%20");
 
           shareBtn.addEventListener("click", copyText);
 
