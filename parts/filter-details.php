@@ -154,7 +154,6 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                  </span>
                                                                  <?php if (get_sub_field('chamber_of_commerce2')) : ?>
                                                                       <span class="chahamber2 cham">
-                                                                           <br />
                                                                            <a href="<?php the_sub_field('chamber_of_commerce_url2'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce2'); ?></a>
                                                                       </span>
                                                                       <span>
@@ -165,7 +164,6 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                  <?php endif; ?>
                                                                  <?php if (get_sub_field('chamber_of_commerce3')) : ?>
                                                                       <span class="chahamber2 cham">
-                                                                           <br />
                                                                            <a href="<?php the_sub_field('chamber_of_commerce_url3'); ?>" target="_blank"><?php the_sub_field('chamber_of_commerce3'); ?></a>
                                                                       </span>
                                                                       <span>

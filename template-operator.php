@@ -7,7 +7,6 @@ Template Name: Operator Page
 get_header();
 
 ?>
-
 <div class="container">
      <section class="grid-container operator">
           <div class="grid-x grid-padding-x align-center">
