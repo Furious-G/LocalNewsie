@@ -149,11 +149,18 @@ Template Name: Operator Territory Details
  																						</span>
  																					<?php endif; ?>
  																				</div>
+																				<!-- About text -->
+																				 <div class="cell large-8 info2" style="padding-top:0">
+																				 <?php if (get_sub_field('about_text')) : ?>
+																					<span>ABOUT:</span>
+
+																				 </div>
+																				 <!-- End about text -->
  																				<!-- End Chamber -->
  																				<!-- Publishers -->
  																				<div class="large-8 cell pubcarousel">
  																					<?php if (have_rows('publishers')) : ?>
- 																						<h5>Publishers</h5>
+ 																						<h5>Publishersxx</h5>
  																						<div class="owl-carousel owl-theme" id="publishers">
  																							<?php while (have_rows('publishers')) : the_row(); ?>
  																								<div class="publisher">

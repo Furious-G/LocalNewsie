@@ -31,7 +31,15 @@ query_posts(array(
 $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $msa . "&territory=" . $territory . "&status=related"
 
 ?>
+<style>
+     .about p {
+          line-height: 1.3rem;
+     }
 
+     .about p:last-child {
+          margin: 0;
+     }
+</style>
 <div class="large-12 cell nopad">
      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                <?php if (have_rows('msa')) : ?>
@@ -174,6 +182,16 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                  <?php endif; ?>
                                                             </div>
                                                             <!-- End Chamber -->
+                                                            <?php if (get_sub_field('about_text')) : ?>
+                                                                 <div class="large-12 cell pubs" style="padding-bottom:0;">
+                                                                      <hr />
+                                                                      <h5>About</h5>
+                                                                      <div class="about">
+                                                                           <?php the_sub_field('about_text'); ?>
+                                                                      </div>
+                                                                 </div>
+                                                            <?php endif; ?>
+
                                                             <!-- Publishers -->
                                                             <div class="large-12 cell pubs hide-for-small-only">
                                                                  <hr />
@@ -197,7 +215,20 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                       <div class="downloadBox"><a href="https://newsie.page.link/sQZE" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/downloads.png">Download Newsie</a></div>
                                                                  </div>
                                                             </div>
-
+                                                            <!-- About -->
+                                                            <div class="large-12 cell mobilePreview show-for-small-only pubs">
+                                                                 <hr />
+                                                                 <?php if (have_rows('about_text')) : ?>
+                                                                      <h5>about</h5>
+                                                                      <div class="publisher" id="publishers">
+                                                                           <?php while (have_rows('publishers')) : the_row(); ?>
+                                                                                <?php $publisher = get_sub_field('publisher'); ?>
+                                                                                <span class="tooltippy" data-text="<?php echo str_replace('-aspect-ratio-100-100', '', $publisher['title']); ?>"><img src="<?php echo esc_url($publisher['url']); ?>"></span>
+                                                                           <?php endwhile; ?>
+                                                                      </div>
+                                                                 <?php endif; ?>
+                                                            </div>
+                                                            <!-- End About -->
                                                             <!-- Publishers -->
                                                             <div class="large-12 cell mobilePreview show-for-small-only pubs">
                                                                  <hr />
