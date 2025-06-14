@@ -355,7 +355,7 @@
      }
 
      .chahamber2 {
-          display: inline-block;
+          display: block;
           margin-left: 75px;
 
           @include device-below(xsmall) {

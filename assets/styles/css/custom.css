@@ -1879,7 +1879,7 @@ footer .menu .active > a {
   z-index: 99;
 }
 .operator .chahamber2 {
-  display: inline-block;
+  display: block;
   margin-left: 75px;
 }
 @media (max-width: 389px) {

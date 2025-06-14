@@ -32,8 +32,11 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
 
 ?>
 <style>
-     .about p {
-          line-height: 1.3rem;
+     .about p,
+     .about li {
+          line-height: 1rem;
+          font-size: 14px;
+          color: #000;
      }
 
      .about p:last-child {
@@ -189,6 +192,7 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                       <div class="about">
                                                                            <?php the_sub_field('about_text'); ?>
                                                                       </div>
+                                                                      <hr class="show-for-small-only" style="margin-top:15px" />
                                                                  </div>
                                                             <?php endif; ?>
 
@@ -215,20 +219,6 @@ $currentUrl = get_site_url() . "/operator-pages/?state=" . $state . "&msa=" . $m
                                                                       <div class="downloadBox"><a href="https://newsie.page.link/sQZE" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/downloads.png">Download Newsie</a></div>
                                                                  </div>
                                                             </div>
-                                                            <!-- About -->
-                                                            <div class="large-12 cell mobilePreview show-for-small-only pubs">
-                                                                 <hr />
-                                                                 <?php if (have_rows('about_text')) : ?>
-                                                                      <h5>about</h5>
-                                                                      <div class="publisher" id="publishers">
-                                                                           <?php while (have_rows('publishers')) : the_row(); ?>
-                                                                                <?php $publisher = get_sub_field('publisher'); ?>
-                                                                                <span class="tooltippy" data-text="<?php echo str_replace('-aspect-ratio-100-100', '', $publisher['title']); ?>"><img src="<?php echo esc_url($publisher['url']); ?>"></span>
-                                                                           <?php endwhile; ?>
-                                                                      </div>
-                                                                 <?php endif; ?>
-                                                            </div>
-                                                            <!-- End About -->
                                                             <!-- Publishers -->
                                                             <div class="large-12 cell mobilePreview show-for-small-only pubs">
                                                                  <hr />
